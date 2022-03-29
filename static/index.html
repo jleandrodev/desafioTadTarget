@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        body{
+            background: #e9e9e9;
+            text-align: center;
+        }
+
+        table {
+            border-radius: 5px;
+            background: #fff;
+        }
+        
+        
+        
+        th, td {
+            width: 100%;
+            padding: 10px 20px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 720px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+       
+
+           .button button {
+                width: 300px;
+                font-size: 22px;
+                color: #fff;
+                background: green;
+                border-radius: 20px;
+                height: 40px;
+                border: none;
+                cursor: pointer;
+                transition: 0.2ms;
+                margin-bottom: 50px;
+      
+
+            }
+
+            .action-button-edit {
+                width: 80px;
+                height: 30px;
+                color: #fff;
+                background: green;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.2ms;
+                margin: 5px auto;
+                border: none;
+            }
+            .action-button-delete {
+                width: 80px;
+                height: 30px;
+                color: #fff;
+                background: red;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.2ms;
+                margin: 5px auto;
+                border: none;
+            }
+            button:hover {
+                transform: scale(1.1);
+            }
+
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Tad Target</title>
+</head>
+<body>
+    <h1>Desafio Tad Target</h1>
+    <hr>
+    <div class="container">
+        <div class="button">
+            <a href="/add">
+                <button>Adicionar contato</button>
+            </a>
+        </div>
+        <table>
+            <thead>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Ações</th>
+            </thead>
+            <tbody>
+                {% for e in contatos %}
+                    <tr>
+                        <td>{{e.name}}</td>
+                        <td>{{e.email}}</td>
+                        <td>{{e.phone}}</td>
+                        <td>
+                            <a href="/edit/{{e.id}}"><button class="action-button-edit">Edit</button></a>
+                            <a href="/delete/{{e.id}}"><button class="action-button-delete">Delete</button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -52,11 +52,15 @@ substituindo o PROJECT-NAME pelo nome do seu próprio projeto.
 
 ##### Vinculando-se a um projeto existente:
 
-De qualquer ferramenta de linha de comando\terminal
+De qualquer ferramenta de linha de comando\terminal:
 
      gcloud config set project PROJECT-NAME
 
 substituindo o PROJECT-NAME pelo nome do seu próprio projeto.
+
+Ativar a Cloud Build Api no projeto com o comando:
+
+     gcloud services enable cloudbuild.googleapis.com
 
 ### Empurrando seu aplicativo para a Nuvem do Google:
 
